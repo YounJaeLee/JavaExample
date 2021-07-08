@@ -14,5 +14,26 @@ public class Example {
 		
 		List<String> people = Arrays.asList(new String[]{ "가나다", "라마바", "사아자", "차카타", "파하가", "나다라", "가나다" });
 		List<String> pets = Arrays.asList(new String[]{ "강아지", "강아지", "고양이", "고양이", "고양이", "고양이", "강아지" });
+		
+		List<String> dogOwners = new ArrayList<>();
+		List<String> catOwners = new ArrayList<>();
+		Map<String, List<String>> petOwners = new HashMap<>();
+		
+		for (int i = 0; i < people.size(); i++) {
+			String person = people.get(i);
+			String pet = pets.get(i);
+			System.out.println(person);
+			
+			if (pet.equals("강아지")) {
+				dogOwners.add(person);
+			} else {
+				catOwners.add(person);
+			}
+		}
+		
+		petOwners.put("강아지", dogOwners);
+		petOwners.put("고양이", catOwners);
+		
+		System.out.println(petOwners);
 	}
 }
